@@ -11,7 +11,7 @@ img {
   object-fit: cover;
 }
 
-.image {
+.img-container {
   display:none;
 }
 
@@ -26,8 +26,8 @@ img {
   position: relative;
 }
 
-.arrow-up, 
-.arrow-down {
+.arrow-right, 
+.arrow-left {
   border: solid 1px transparent;
   display: inline-block;
   border-radius: 50%;
@@ -40,18 +40,16 @@ img {
   justify-content: center;
   align-items: center;
   font-size: 14px;
+  top: 50%;
+  z-index: 999;
 }
 
-.arrow-up {
-  top: 5px;
-  left: 50%;
-  transform: translateX(-50%);
+.arrow-right {
+  right: 20px;
 }
 
-.arrow-down {
-  bottom: 5px;
-  left: 50%;
-  transform:translate(-50%, 0);
+.arrow-left {
+  left: 20px;
 }
 
 .img-container {

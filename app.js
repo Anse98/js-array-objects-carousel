@@ -34,14 +34,13 @@ const images = [
 
 
 
-// uso l'array di oggetti per creare il carosello
-
 // vado a prendermi ogni oggetto uno alla volta
 for(let i = 0; i < images.length; i++) {
   const image = images[i];
   
   const containerDOMEl = document.querySelector(".container");
 
+  // ogni oggetto lo stampo nell'html
   containerDOMEl.innerHTML += 
   ` 
   <div class="img-container">
@@ -52,9 +51,61 @@ for(let i = 0; i < images.length; i++) {
     </div>
   </div>
   ` ;
-
 } 
-// vado a prendermi l'immagine una alla volta
 
 
-// ogni immagine la stampo nell'html
+//Dopo che le ho create nell'html, vado a prendermi dal DOM tutti gli elementi con la classe img-container
+const imgContainerDOMEl = document.querySelectorAll(".img-container");
+
+// Fisso una variabile contatore che parte da 0
+let currentImg = 0;
+
+// Rendo quindi visibile solo il primo elemento di default
+imgContainerDOMEl[currentImg].classList.add("active");
+
+
+
+
+// Vado a prendere dal DOM la freccia destra e gli aggancio un evento
+const rightArrowDOMEl = document.querySelector(".arrow-right");
+
+rightArrowDOMEl.addEventListener("click", function(){
+
+  imgContainerDOMEl[currentImg].classList.remove("active");
+
+  if(currentImg === images.length - 1) {
+
+    currentImg = 0;
+
+  } else {
+
+    currentImg ++;
+
+  }
+   
+  imgContainerDOMEl[currentImg].classList.add("active");
+  
+})
+
+
+
+// Vado a prendere dal DOM la freccia sinistra e gli aggancio un evento
+const leftArrowDOMEl = document.querySelector('.arrow-left');
+
+leftArrowDOMEl.addEventListener('click', function () {
+
+  imgContainerDOMEl[currentImg].classList.remove("active");
+
+  if(currentImg === 0) {
+
+    currentImg = images.length -1;
+
+  } else {
+
+    currentImg --;
+
+  }
+
+  imgContainerDOMEl[currentImg].classList.add("active");
+
+});
