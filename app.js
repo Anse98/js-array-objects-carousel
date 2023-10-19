@@ -134,9 +134,12 @@ const leftArrowDOMEl = document.querySelector('.arrow-left');
 
 leftArrowDOMEl.addEventListener('click', function () {
 
-  swipeLeft()
+  swipeLeft();
 
 });
 
 
 ////////////////////////////////// FINE EVENTI /////////////////////////////////
+
+
+setInterval(swipeRight, 3000);
