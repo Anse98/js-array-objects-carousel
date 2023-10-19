@@ -1,3 +1,5 @@
+
+// Array di oggetti 
 const images = [
 	{
 		image: 'img/01.webp',
@@ -22,10 +24,37 @@ const images = [
 		title: 'Stray',
 		text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
 	},
-  
+
 	{
 		image: 'img/05.webp',
 		title: "Marvel's Avengers",
 		text: "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
 	},
 ]
+
+
+
+// uso l'array di oggetti per creare il carosello
+
+// vado a prendermi ogni oggetto uno alla volta
+for(let i = 0; i < images.length; i++) {
+  const image = images[i];
+  
+  const containerDOMEl = document.querySelector(".container");
+
+  containerDOMEl.innerHTML += 
+  ` 
+  <div class="img-container">
+    <img src="${image.image}">
+    <div class="img-text">
+    <h2>${image.title}</h2>
+    <p>${image.text}</p>
+    </div>
+  </div>
+  ` ;
+
+} 
+// vado a prendermi l'immagine una alla volta
+
+
+// ogni immagine la stampo nell'html
